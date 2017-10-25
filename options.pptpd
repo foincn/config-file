@@ -1,0 +1,34 @@
+# /etc/ppp/pptpd-options
+
+# Authentication
+name pptpd
+
+# Encryption
+refuse-pap
+refuse-chap
+refuse-mschap
+
+# (note that MPPE requires the use of MSCHAP-V2 during authentication)
+require-mschap-v2
+require-mppe-128
+
+ms-dns 8.8.8.8
+ms-dns 8.8.4.4
+
+# packets to the clients -- James Cameron)
+proxyarp
+
+# Debian: do not replace the default route
+nodefaultroute
+
+# Create a UUCP-style lock file for the pseudo-tty to ensure exclusive access.
+lock
+
+# Disable Van Jacobson compression
+# (needed on some networks with Windows 9x/ME/XP clients, see posting to
+# poptop-server on 14th April 2005 by Pawel Pokrywka and followups,
+# http://marc.theaimsgroup.com/?t=111343175400006&r=1&w=2 )
+novj
+novjccomp
+
+nologfd
